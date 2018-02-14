@@ -14,7 +14,15 @@ class Student
 
 
   def save()
-    
+    sql = "INSERT INTO students (first_name, second_name, house, age) VALUES ($1, $2, $3, $4) RETURNING id"
+    values = [@first_name, @second_name, @house, @age]
+    student = SqlRunner.run( sql, values )
+    @id = student.first()['id'].to_i
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM students"
+    SqlRunner.run(sql)
   end
 
 end
