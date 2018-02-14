@@ -20,6 +20,13 @@ class Student
     @id = student.first()['id'].to_i
   end
 
+  def house()
+    sql = "SELECT houses.name FROM houses"
+    houses = SqlRunner.run( sql )
+    result = houses.map { |house| House.new( house )}
+    return result.first
+  end
+
   def self.delete_all()
     sql = "DELETE FROM students"
     SqlRunner.run(sql)
