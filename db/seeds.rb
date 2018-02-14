@@ -1,6 +1,8 @@
 require('pry')
 
 require_relative('../models/student.rb')
+require_relative('../models/house.rb')
+
 
 Student.delete_all()
 
@@ -20,6 +22,24 @@ student2 = Student.new({
 
 student1.save()
 student2.save()
+
+house1 = House.new({
+  "name" => "Gryffindor"
+  })
+house2 = House.new({
+  "name" => "Ravenclaw"
+    })
+house3 = House.new({
+  "name" => "Hufflepuff"
+      })
+house4 = House.new({
+  "name" => "Slytherin"
+        })
+
+house1.save()
+house2.save()
+house3.save()
+house4.save()
 
 binding.pry
 nil
