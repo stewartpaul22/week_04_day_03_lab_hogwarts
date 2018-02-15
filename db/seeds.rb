@@ -34,7 +34,7 @@ student1 = Student.new({
 student2 = Student.new({
   "first_name" => "Ron",
   "second_name" => "Weasley",
-  "house_id" => house1.id,
+  "house_id" => house4.id,
   "age" => 8
   })
 

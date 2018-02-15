@@ -21,10 +21,11 @@ class Student
   end
 
   def house()
-    sql = "SELECT houses.name FROM houses"
-    houses = SqlRunner.run( sql )
+    sql = "SELECT houses.* FROM houses WHERE houses.id = $1"
+    values = [@house_id]
+    houses = SqlRunner.run( sql, values )
     result = houses.map { |house| House.new( house )}
-    return result.first
+    return result[0].name 
   end
 
   def self.delete_all()

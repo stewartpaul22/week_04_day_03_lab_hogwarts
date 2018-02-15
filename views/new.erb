@@ -7,9 +7,9 @@
   <input type="text" name="second_name" id="second_name" required />
 
   <label for="house-select">Select House: </label>
-  <select name="house">
+  <select name="house_id">
     <% @houses.each do |house| %>
-    <option value="<%= house.name %>"><%= house.name %></option>
+    <option value="<%= house.id %>" id="house_id"><%= house.name %></option>
     <% end %>
   </select>
 
